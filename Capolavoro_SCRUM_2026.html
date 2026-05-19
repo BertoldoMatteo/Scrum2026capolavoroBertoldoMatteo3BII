@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panoramica del Progetto SCRUM 2026 | TAFAB</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+  --primary: #C0392B;
+  --primary-dark: #922B21;
+  --primary-light: #E74C3C;
+  --gold: #F4D03F;
+  --gold-dark: #D4AC0D;
+  --dark: #1a1a2e;
+  --dark2: #2C3E50;
+  --text: #2d3436;
+  --text-light: #636e72;
+  --bg: #ffffff;
+  --bg-alt: #f8f9fa;
+  --pl: #27AE60;
+  --blue: #2980B9;
+  --purple: #8E44AD;
+  --orange: #E67E22;
+  --border: #e0e0e0;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.7;
+}
+
+/* ===== COVER ===== */
+.cover {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, var(--primary-light) 100%);
+  page-break-after: always;
+  overflow: hidden;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.05) 0%, transparent 50%),
+              radial-gradient(circle at 70% 60%, rgba(255,255,255,0.03) 0%, transparent 50%);
+}
+.cover > * { position: relative; z-index: 1; }
+.cover img {
+  width: 110px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.2));
+}
+.cover .brand {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+.cover .brand-sub {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+.cover h1 {
+  font-size: 2.4rem;
+  color: #fff;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+.cover .sub-cover {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 32px;
+  font-style: italic;
+}
+.cover .role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--gold);
+  padding: 12px 30px;
+  border-radius: 50px;
+  color: var(--gold);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 32px;
+}
+.cover .role-badge i { font-size: 1.2rem; }
+.cover .quote {
+  max-width: 620px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+  border-left: 3px solid var(--gold);
+  padding: 24px 28px;
+  color: rgba(255,255,255,0.92);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  text-align: left;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+}
+.cover .year {
+  margin-top: 40px;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* ===== DOCUMENT BODY ===== */
+.document {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ===== HEADER ===== */
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 0 20px;
+  border-bottom: 2px solid var(--primary);
+  margin-bottom: 30px;
+}
+.page-header .h-left { display: flex; align-items: center; gap: 12px; }
+.page-header .h-left img { width: 45px; }
+.page-header .h-left .hb { font-weight: 700; color: var(--dark2); font-size: 0.9rem; }
+.page-header .h-left .hs { font-size: 0.65rem; color: var(--text-light); letter-spacing: 2px; text-transform: uppercase; }
+.page-header .h-right { text-align: right; }
+.page-header .h-right .ht { font-size: 0.75rem; color: var(--text-light); }
+.page-header .h-right .hs2 { font-size: 0.6rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; }
+
+/* ===== SECTIONS ===== */
+section { padding: 10px 0; }
+.section-title {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 6px;
+}
+.section-title .num {
+  font-weight: 700; font-size: 1.8rem; color: var(--primary);
+  opacity: 0.3; line-height: 1;
+}
+.section-title h2 { font-size: 1.5rem; color: var(--dark2); font-weight: 700; }
+.section-sub { font-size: 0.88rem; color: var(--text-light); margin: 0 0 18px 42px; font-style: italic; }
+section p { font-size: 0.95rem; color: var(--text); margin-bottom: 10px; }
+section p strong { color: var(--dark2); }
+section code {
+  background: var(--bg-alt); color: var(--dark2);
+  padding: 1px 6px; border-radius: 3px;
+  font-size: 0.85em; border: 1px solid var(--border);
+}
+section ul { list-style: none; padding: 0; }
+section ul li { padding: 2px 0 2px 18px; position: relative; color: var(--text); font-size: 0.9rem; }
+section ul li::before {
+  content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900;
+  position: absolute; left: 0; color: var(--primary); font-size: 0.7rem; top: 7px;
+}
+
+/* ===== AWARD GRID ===== */
+.award-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 14px;
+}
+.award-card {
+  border-radius: 10px; padding: 28px 24px;
+  text-align: center; border: 1px solid var(--border);
+  background: var(--bg-alt);
+}
+.award-card .icon {
+  width: 54px; height: 54px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; margin-bottom: 12px;
+}
+.award-card.role-card .icon { background: var(--primary); color: #fff; }
+.award-card.prize-card .icon { background: var(--gold-dark); color: #fff; }
+.award-card h3 { font-size: 1.15rem; color: var(--dark2); margin-bottom: 8px; }
+.award-card p { font-size: 0.88rem; color: var(--text-light); margin: 0; }
+.award-card .tag {
+  display: inline-block;
+  padding: 3px 12px; border-radius: 50px;
+  font-size: 0.65rem; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; margin-bottom: 8px;
+}
+.award-card.role-card .tag { background: var(--primary); color: #fff; }
+.award-card.prize-card .tag { border: 1px solid var(--gold-dark); color: var(--gold-dark); }
+.prize-card { border: 1px solid var(--gold-dark); background: #FFFDF0; }
+
+/* ===== GALLERY ===== */
+.gallery {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0;
+}
+.gallery figure {
+  background: var(--bg-alt); border-radius: 8px;
+  overflow: hidden; border: 1px solid var(--border);
+}
+.gallery img { width: 100%; height: 130px; object-fit: contain; padding: 10px; display: block; background: #fff; }
+.gallery figcaption {
+  text-align: center; font-size: 0.75rem; color: var(--text-light);
+  padding: 8px; border-top: 1px solid var(--border); font-weight: 500;
+}
+
+/* ===== PL HIGHLIGHT ===== */
+.pl-highlight {
+  background: linear-gradient(135deg, var(--pl) 0%, #1e8449 100%);
+  border-radius: 8px; padding: 18px 24px; margin: 16px 0;
+  color: #fff; display: flex; align-items: center; gap: 14px;
+}
+.pl-highlight i { font-size: 1.5rem; }
+.pl-highlight strong { font-size: 1rem; }
+.pl-highlight span { font-size: 0.85rem; opacity: 0.9; }
+
+/* ===== MODULES ===== */
+.modules {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 14px;
+}
+.module-card {
+  background: var(--bg-alt); border-radius: 8px; padding: 20px;
+  border: 1px solid var(--border); border-left: 4px solid var(--dark2);
+  position: relative;
+}
+.module-card.pl-module {
+  border-left-color: var(--pl);
+  background: linear-gradient(135deg, #f0fff4 0%, #fff 100%);
+}
+.module-card .m-badge {
+  font-size: 0.6rem; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--text-light); margin-bottom: 4px;
+}
+.module-card h3 { font-size: 1rem; color: var(--dark2); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+.module-card h3 i { color: var(--text-light); font-size: 0.85rem; }
+.module-card p { font-size: 0.82rem; color: var(--text-light); margin-bottom: 8px; }
+.module-card ul { list-style: none; padding: 0; }
+.module-card ul li {
+  font-size: 0.78rem; padding: 1px 0 1px 16px; color: var(--text);
+}
+.module-card ul li::before { font-size: 0.6rem; top: 5px; color: var(--text-light); }
+.module-card .tech {
+  margin-top: 8px; font-size: 0.7rem; color: var(--text-light);
+  border-top: 1px solid var(--border); padding-top: 8px; font-style: italic;
+}
+.module-card .my-area {
+  position: absolute; top: 8px; right: 8px;
+  background: var(--pl); color: #fff; font-size: 0.55rem;
+  padding: 2px 8px; border-radius: 4px; font-weight: 600; letter-spacing: 0.5px;
+}
+
+/* ===== TREE ===== */
+.tree {
+  background: #1a1a2e; color: #e2e8f0; border-radius: 8px;
+  padding: 18px 22px; font-family: 'Consolas', 'SF Mono', monospace;
+  font-size: 0.75rem; line-height: 1.6; overflow-x: auto; margin-top: 12px;
+}
+.tree .folder { color: #93C5FD; font-weight: 600; }
+.tree .file { color: #e2e8f0; }
+.tree .note { color: #94a3b8; font-style: italic; }
+.tree .pl-line { color: #4ade80; font-weight: 600; }
+
+/* ===== FLOW ===== */
+.flow {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 14px;
+}
+.flow-step {
+  background: var(--bg-alt); border: 1px solid var(--border);
+  border-radius: 8px; padding: 16px 10px; text-align: center;
+}
+.flow-step .fi {
+  width: 40px; height: 40px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--primary); color: #fff; font-size: 1rem; margin-bottom: 8px;
+}
+.flow-step h4 { font-size: 0.9rem; color: var(--dark2); margin-bottom: 4px; }
+.flow-step p { font-size: 0.75rem; color: var(--text-light); margin: 0; }
+
+/* ===== TIMELINE ===== */
+.timeline {
+  position: relative; margin: 16px 0 0 10px; padding-left: 30px;
+  border-left: 2px solid var(--primary);
+}
+.step {
+  position: relative; margin-bottom: 18px; padding-left: 10px;
+}
+.step:last-child { margin-bottom: 0; }
+.step::before {
+  content: ''; position: absolute;
+  left: -36px; top: 6px;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: #fff; border: 3px solid var(--primary);
+}
+.step h4 { font-size: 1rem; color: var(--dark2); font-weight: 600; }
+.step h4 .num { color: var(--primary); margin-right: 6px; font-weight: 700; }
+.step p { font-size: 0.85rem; color: var(--text-light); margin: 2px 0 6px; }
+.step .tag {
+  display: inline-block; background: var(--bg-alt); color: var(--text-light);
+  padding: 2px 8px; border-radius: 3px; font-size: 0.62rem;
+  font-weight: 500; margin-right: 4px; border: 1px solid var(--border);
+}
+
+/* ===== TECH PILLS ===== */
+.tech-pills {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px;
+}
+.pill {
+  background: var(--dark2); color: #fff; padding: 4px 10px;
+  border-radius: 4px; font-size: 0.7rem; font-weight: 500;
+}
+.pill.alt { background: var(--bg-alt); color: var(--text); border: 1px solid var(--border); }
+
+/* ===== FOOTER ===== */
+.doc-footer {
+  text-align: center; padding: 28px 0 40px;
+  font-size: 0.78rem; color: var(--text-light);
+  border-top: 1px solid var(--border); margin-top: 20px;
+}
+
+/* ===== TEAM PHOTO SECTION ===== */
+.team-photo {
+  margin: 16px 0; text-align: center;
+}
+.team-photo img {
+  max-width: 100%; border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.team-photo .caption {
+  font-size: 0.78rem; color: var(--text-light);
+  margin-top: 6px; font-style: italic;
+}
+
+/* ===== PRINT ===== */
+@page { size: A4; margin: 8mm; }
+@media print {
+  body { background: #fff !important; padding: 0; }
+  .module-card, .award-card, .flow-step, .step { break-inside: avoid; }
+  .tree { font-size: 0.65rem; }
+  .cover { min-height: calc(100vh - 16mm); }
+  .document { padding: 0; }
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width: 700px) {
+  .document { padding: 0 20px; }
+  .award-grid, .modules { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .flow { grid-template-columns: repeat(2, 1fr); }
+  .cover h1 { font-size: 1.8rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<section class="cover">
+  <img src="Logo_giusto.png" alt="Logo TAFAB">
+  <div class="brand">TAFAB</div>
+  <div class="brand-sub">Gruppo di Innovazione</div>
+  <h1>Il mio Capolavoro</h1>
+  <div class="sub-cover">Progetto SCRUM 2026 &mdash; Intelligenza Artificiale in Azienda</div>
+  <div class="role-badge"><i class="fas fa-award"></i> SCRUM MASTER</div>
+  <div class="quote">
+    &ldquo;Ho scelto il progetto SCRUM 2026 come capolavoro perch&eacute; mi ha fatto crescere davvero.
+    Come Scrum Master ho coordinato il mio team, facilitato le daily e tolto gli ostacoli:
+    ho assaporato cosa significa stare a capo di un gruppo, ascoltare prima di parlare
+    e far brillare gli altri. Abbiamo vinto il premio per la migliore applicazione del
+    metodo SCRUM: una conferma che il lavoro di squadra funziona.&rdquo;
+  </div>
+  <div class="year">Anno Scolastico 2025 / 2026</div>
+</section>
+
+<div class="document">
+
+  <!-- ===== PAGE HEADER ===== -->
+  <div class="page-header">
+    <div class="h-left">
+      <img src="Logo_giusto.png" alt="TAFAB">
+      <div>
+        <div class="hb">TAFAB &mdash; Gruppo di Innovazione</div>
+        <div class="hs">Vincitori Premio Miglior Metodo SCRUM 2026</div>
+      </div>
+    </div>
+    <div class="h-right">
+      <div class="ht">Panoramica del Progetto</div>
+      <div class="hs2">Scrum2026-master</div>
+    </div>
+  </div>
+
+  <!-- ===== INTRO ===== -->
+  <section>
+    <p>Una guida visiva al contenuto della cartella <strong>Scrum2026-master</strong>: cosa contiene, come funziona ciascun modulo e il percorso metodologico seguito per realizzarlo.</p>
+  </section>
+
+  <!-- ===== I · RUOLO ===== -->
+  <section>
+    <div class="section-title">
+      <span class="num">I</span>
+      <h2>Il riconoscimento e il ruolo di Scrum Master</h2>
+    </div>
+    <div class="section-sub">Una vittoria di squadra, guidata da un metodo applicato con rigore</div>
+    <p>
+      Questo progetto non &egrave; soltanto un portale: &egrave; il risultato di un percorso premiato.
+      Durante l'edizione <strong>2026</strong> abbiamo conquistato il riconoscimento per la
+      <strong>migliore applicazione del metodo SCRUM</strong>, grazie a una squadra coesa,
+      sprint ben strutturati e una comunicazione continua tra i cinque membri del team.
+    </p>
+
+    <div class="award-grid">
+      <div class="award-card role-card">
+        <div class="icon"><i class="fas fa-user-tie"></i></div>
+        <div class="tag">Il mio ruolo</div>
+        <h3>Scrum Master</h3>
+        <p>Ho ricoperto il ruolo di <strong>Scrum Master</strong>, coordinando i cinque team (CM, HR, RS, PL, PV), facilitando le <em>daily</em>, rimuovendo gli impedimenti e garantendo che ogni sprint rispettasse i principi agili: trasparenza, ispezione e adattamento.</p>
+      </div>
+      <div class="award-card prize-card">
+        <div class="icon"><i class="fas fa-trophy"></i></div>
+        <div class="tag">Premio vinto</div>
+        <h3>Miglior Metodo SCRUM Applicato</h3>
+        <p>Il progetto &egrave; stato giudicato come il <strong>miglior esempio di applicazione del framework SCRUM</strong>: backlog ben curato, sprint review puntuali, retrospettive efficaci e un incremento di prodotto realmente funzionante a ogni iterazione.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== I.5 · FOTO DEL TEAM + PL HIGHLIGHT ===== -->
+  <section>
+    <div class="team-photo">
+      <img src="ImmagineGruppo.jpeg" alt="Team TAFAB">
+      <div class="caption">Il team TAFAB &mdash; Vincitori Premio Miglior Metodo SCRUM 2026</div>
+    </div>
+
+    <div class="pl-highlight">
+      <i class="fas fa-cogs"></i>
+      <div>
+        <strong>PL &mdash; Produzione e Logistica: la mia area</strong><br>
+        <span>Previsione domanda, gestione magazzino, ottimizzazione supply chain &bull; Python, Pandas, Forecasting, Streamlit</span>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <figure>
+        <img src="Logo_giusto.png" alt="Logo TAFAB">
+        <figcaption>Logo TAFAB</figcaption>
+      </figure>
+      <figure>
+        <img src="CM/img/PANINO ROSSO.png" alt="Panino Rosso">
+        <figcaption>Panino Rosso</figcaption>
+      </figure>
+      <figure>
+        <img src="CM/img/ROSSI PANS.png" alt="Rossi Pans">
+        <figcaption>Linea Rossi Pans</figcaption>
+      </figure>
+      <figure>
+        <img src="CM/img/PROTOITPO NAINOO.png" alt="Prototipo">
+        <figcaption>Prototipo prodotto</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== II · COSA CONTIENE ===== -->
+  <section>
+    <div class="section-title">
+      <span class="num">II</span>
+      <h2>Cosa contiene la cartella</h2>
+    </div>
+    <div class="section-sub">Una panoramica dei contenuti, file e sotto-cartelle</div>
+    <p>
+      Il progetto nasce come <strong>esercitazione SCRUM</strong> orientata all'applicazione dell'<strong>Intelligenza Artificiale</strong> ai processi aziendali di un'azienda alimentare ispirata a Morato Pane. Il prodotto &egrave; un mini-portale web (<code>scrum.html</code>) che fa da hub centrale verso <strong>cinque aree aziendali</strong>, ciascuna con una propria sotto-cartella e un proprio approfondimento.
+    </p>
+
+    <p><strong>Elementi principali alla radice</strong></p>
+    <p>Alla radice si trovano il file <code>scrum.html</code> (la home con le cinque card cliccabili), il logo <code>Logo_giusto.png</code> usato in tutte le pagine e le cinque cartelle aziendali siglate: <strong>CM, HR, PL, PV, RS</strong>.</p>
+  </section>
+
+  <!-- ===== III · MODULI ===== -->
+  <section style="page-break-before: always;">
+    <div class="section-title">
+      <span class="num">III</span>
+      <h2>I cinque moduli aziendali</h2>
+    </div>
+    <div class="section-sub">Ogni cartella rappresenta un'area in cui l'AI &egrave; stata applicata</div>
+
+    <div class="modules">
+      <div class="module-card">
+        <div class="m-badge">CM &middot; Commercial &amp; Marketing</div>
+        <h3><i class="fas fa-chart-line"></i> Marketing e Vendite</h3>
+        <p>Contenuti promozionali, campagne pubblicitarie e analisi predittiva della domanda.</p>
+        <ul>
+          <li>Pagina di approfondimento (<code>apprf.html</code>)</li>
+          <li>Pagina pubblicitaria del prodotto</li>
+          <li>Immagini e video promozionali</li>
+        </ul>
+        <div class="tech">Tech: HTML / CSS &middot; Asset grafici &middot; Video MP4</div>
+      </div>
+
+      <div class="module-card">
+        <div class="m-badge">HR &middot; Human Resources</div>
+        <h3><i class="fas fa-users"></i> Risorse Umane</h3>
+        <p>Recruiting intelligente, formazione adattiva e benessere dei dipendenti tramite AI.</p>
+        <ul>
+          <li>Server Node.js + Express (<code>server.js</code>)</li>
+          <li>Pagine HTML di approfondimento</li>
+          <li>Esempi di AI applicata all'HR</li>
+        </ul>
+        <div class="tech">Tech: Node.js &middot; Express &middot; HTML</div>
+      </div>
+
+      <div class="module-card">
+        <div class="m-badge">RS &middot; Research &amp; Development</div>
+        <h3><i class="fas fa-flask"></i> Ricerca e Sviluppo</h3>
+        <p>Sperimentazioni con visione artificiale (YOLOv8) per il controllo qualit&agrave;.</p>
+        <ul>
+          <li>Modello <code>yolov8n.pt</code> pre-addestrato</li>
+          <li>Script Python <code>test.py</code></li>
+          <li>Streamlit config + pagine HTML</li>
+        </ul>
+        <div class="tech">Tech: Python &middot; Streamlit &middot; YOLOv8 &middot; OpenCV</div>
+      </div>
+
+      <div class="module-card pl-module">
+        <div class="m-badge">PL &middot; Production &amp; Logistics</div>
+        <h3><i class="fas fa-cogs"></i> Produzione e Logistica</h3>
+        <p>Previsione domanda, gestione magazzino e ottimizzazione della supply chain.</p>
+        <span class="my-area"><i class="fas fa-star"></i> MIA AREA</span>
+        <ul>
+          <li>App Python (<code>app.py</code>, <code>main_ai.py</code>)</li>
+          <li>Moduli di forecasting</li>
+          <li>Dataset CSV (magazzino, ordini, BOM)</li>
+        </ul>
+        <div class="tech">Tech: Python &middot; Pandas &middot; Forecasting &middot; Streamlit</div>
+      </div>
+
+      <div class="module-card">
+        <div class="m-badge">PV &middot; Post-Vendita</div>
+        <h3><i class="fas fa-headset"></i> Assistenza Clienti</h3>
+        <p>Chatbot intelligente per supportare i clienti dopo l'acquisto.</p>
+        <ul>
+          <li>Server Node.js + chatbot (<code>server.js</code>)</li>
+          <li>Dataset di FAQ (<code>frequent_issues.json</code>)</li>
+          <li>Interfaccia web di chat</li>
+        </ul>
+        <div class="tech">Tech: Node.js &middot; Express &middot; JSON &middot; CSV</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== IV · STRUTTURA ===== -->
+  <section style="page-break-before: always;">
+    <div class="section-title">
+      <span class="num">IV</span>
+      <h2>Struttura della cartella</h2>
+    </div>
+    <div class="section-sub">Vista ad albero dei contenuti principali</div>
+
+    <pre class="tree">
+<span class="folder">Scrum2026-master/</span>
+|-- <span class="file">scrum.html</span>            <span class="note"># Home: hub con 5 card cliccabili</span>
+|-- <span class="file">Logo_giusto.png</span>       <span class="note"># Logo TAFAB usato ovunque</span>
+|
+|-- <span class="folder">CM/</span>                  <span class="note"># Commercial &amp; Marketing</span>
+|   |-- <span class="file">index-.html</span>
+|   |-- <span class="file">apprf.html</span>
+|   |-- <span class="file">paginapubblicitaria.html</span>
+|   |-- <span class="folder">img/</span>             <span class="note"># Foto prodotto e mockup</span>
+|   `-- <span class="folder">vid/</span>             <span class="note"># Video promozionale</span>
+|
+|-- <span class="folder">HR/</span>                  <span class="note"># Human Resources</span>
+|   |-- <span class="file">index.html</span>
+|   |-- <span class="file">server.js</span>         <span class="note"># Server Express</span>
+|   |-- <span class="file">package.json</span>
+|   `-- <span class="folder">approfondimento/</span>
+|
+|-- <span class="pl-line">PL/</span>                  <span class="pl-line"># Production &amp; Logistics (MIA AREA)</span>
+|   |-- <span class="pl-line">SPIEGAZIONE.html</span>
+|   |-- <span class="pl-line">Approfondimento.html</span>
+|   `-- <span class="pl-line">PROGETTOAI/</span>      <span class="pl-line"># App Python di forecasting</span>
+|       |-- <span class="pl-line">app.py</span>
+|       |-- <span class="pl-line">main_ai.py</span>
+|       |-- <span class="pl-line">forecast_module.py</span>
+|       |-- <span class="pl-line">requirements.txt</span>
+|       `-- <span class="pl-line">data/</span>        <span class="pl-line"># CSV: magazzino, ordini, BOM</span>
+|
+|-- <span class="folder">PV/</span>                  <span class="note"># Post-Vendita</span>
+|   |-- <span class="file">chatbot.html</span>
+|   |-- <span class="file">approfondimento.html</span>
+|   `-- <span class="folder">CHATBOT/</span>
+|       |-- <span class="file">server.js</span>
+|       |-- <span class="file">dataset.csv</span>
+|       `-- <span class="file">frequent_issues.json</span>
+|
+`-- <span class="folder">RS/</span>                  <span class="note"># Research &amp; Development</span>
+    |-- <span class="file">test.py</span>
+    |-- <span class="file">yolov8n.pt</span>         <span class="note"># Modello AI visione artificiale</span>
+    |-- <span class="folder">Pagine con approfondimento/</span>
+    |-- <span class="folder">Script/</span>
+    `-- <span class="folder">Style/</span>
+    </pre>
+  </section>
+
+  <!-- ===== V · COME FUNZIONA ===== -->
+  <section style="page-break-before: always;">
+    <div class="section-title">
+      <span class="num">V</span>
+      <h2>Come funziona</h2>
+    </div>
+    <div class="section-sub">Flusso di navigazione e interazione con i contenuti</div>
+
+    <p>Il punto di ingresso &egrave; <code>scrum.html</code>. Aprendolo in un browser, l'utente vede una <strong>dashboard con cinque card animate</strong>, una per ogni area aziendale. Ogni card &egrave; cliccabile e porta alla pagina di approfondimento del modulo corrispondente.</p>
+
+    <div class="flow">
+      <div class="flow-step">
+        <div class="fi"><i class="fas fa-house"></i></div>
+        <h4>1. Home</h4>
+        <p>Apri <code>scrum.html</code> nel browser.</p>
+      </div>
+      <div class="flow-step">
+        <div class="fi"><i class="fas fa-hand-pointer"></i></div>
+        <h4>2. Scegli area</h4>
+        <p>Clicca una delle cinque card.</p>
+      </div>
+      <div class="flow-step">
+        <div class="fi"><i class="fas fa-book-open"></i></div>
+        <h4>3. Approfondisci</h4>
+        <p>Leggi caso d'uso, vantaggi, esempi.</p>
+      </div>
+      <div class="flow-step">
+        <div class="fi"><i class="fas fa-play-circle"></i></div>
+        <h4>4. Demo AI</h4>
+        <p>Avvia le demo Python o Node.js.</p>
+      </div>
+    </div>
+
+    <p><strong>Esecuzione delle demo interattive</strong></p>
+    <p><strong>HR e PV (Node.js):</strong> entrare nella cartella, eseguire <code>npm install</code> e poi <code>node server.js</code>. Il server espone l'interfaccia su <em>localhost</em>.</p>
+    <p><strong>PL (Python / Streamlit):</strong> dalla cartella <code>PL/PROGETTOAI</code>, <code>pip install -r requirements.txt</code> e poi <code>streamlit run app.py</code>.</p>
+    <p><strong>RS (YOLOv8):</strong> richiede l'installazione di <code>ultralytics</code> e l'esecuzione di <code>python test.py</code> per analizzare immagini tramite il modello <code>yolov8n.pt</code>.</p>
+
+    <div class="tech-pills">
+      <span class="pill">HTML5</span>
+      <span class="pill">CSS3</span>
+      <span class="pill">JavaScript</span>
+      <span class="pill">Node.js</span>
+      <span class="pill">Express</span>
+      <span class="pill">Python</span>
+      <span class="pill">Streamlit</span>
+      <span class="pill">Pandas</span>
+      <span class="pill">YOLOv8</span>
+      <span class="pill alt">CSV / JSON</span>
+    </div>
+  </section>
+
+  <!-- ===== VI · PERCORSO ===== -->
+  <section>
+    <div class="section-title">
+      <span class="num">VI</span>
+      <h2>Il percorso seguito</h2>
+    </div>
+    <div class="section-sub">Le tappe in stile SCRUM: dall'idea al prodotto finito</div>
+
+    <div class="timeline">
+      <div class="step">
+        <h4><span class="num">01</span>Definizione della visione</h4>
+        <p>Scelta del contesto: un'azienda alimentare ispirata a Morato Pane e dei cinque ambiti dove l'AI pu&ograve; generare valore concreto.</p>
+        <span class="tag">Brainstorming</span>
+        <span class="tag">Product Vision</span>
+      </div>
+      <div class="step">
+        <h4><span class="num">02</span>Creazione del team SCRUM</h4>
+        <p>Suddivisione in cinque gruppi, uno per area (CM, HR, RS, PL, PV), ciascuno responsabile del proprio incremento di prodotto.</p>
+        <span class="tag">Ruoli</span>
+        <span class="tag">Responsabilit&agrave;</span>
+      </div>
+      <div class="step">
+        <h4><span class="num">03</span>Product Backlog</h4>
+        <p>Stesura della lista delle funzionalit&agrave;: pagine HTML informative, demo AI funzionanti, asset grafici e dataset di esempio.</p>
+        <span class="tag">User Stories</span>
+        <span class="tag">Priorit&agrave;</span>
+      </div>
+      <div class="step">
+        <h4><span class="num">04</span>Sprint di progettazione</h4>
+        <p>Definizione della palette cromatica, del layout a card e della struttura ad albero condivisa tra i moduli.</p>
+        <span class="tag">UI / UX</span>
+        <span class="tag">Design System</span>
+      </div>
+      <div class="step">
+        <h4><span class="num">05</span>Sprint di sviluppo</h4>
+        <p>Ogni team ha sviluppato il proprio modulo: pagine statiche, server Node.js, applicazioni Streamlit e modelli AI.</p>
+        <span class="tag">HTML / CSS / JS</span>
+        <span class="tag">Python &middot; Node</span>
+        <span class="tag">AI Models</span>
+      </div>
+      <div class="step">
+        <h4><span class="num">06</span>Integrazione nel portale</h4>
+        <p>Tutti i moduli sono stati collegati alla home <code>scrum.html</code> tramite le cinque card cliccabili e i relativi <code>data-link</code>.</p>
+        <span class="tag">Linking</span>
+        <span class="tag">Navigazione</span>
+      </div>
+      <div class="step">
+        <h4><span class="num">07</span>Review e Retrospettiva</h4>
+        <p>Test della navigazione, verifica delle demo AI, raccolta feedback e correzione di bug visivi e funzionali.</p>
+        <span class="tag">QA</span>
+        <span class="tag">Feedback</span>
+      </div>
+      <div class="step">
+        <h4><span class="num">08</span>Rilascio finale</h4>
+        <p>Pubblicazione della cartella <code>Scrum2026-master</code> con tutti i moduli integrati e documentati in questa panoramica.</p>
+        <span class="tag">Delivery</span>
+        <span class="tag">Documentazione</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VII · SINTESI ===== -->
+  <section>
+    <div class="section-title">
+      <span class="num">VII</span>
+      <h2>In sintesi</h2>
+    </div>
+    <div class="section-sub">Cosa porta a casa chi esplora questa cartella</div>
+    <p>
+      <strong>Scrum2026-master</strong> non &egrave; soltanto una raccolta di file: &egrave; il risultato di un percorso di squadra in cui l'<strong>Intelligenza Artificiale</strong> incontra i processi reali di un'azienda. Ogni cartella racconta una storia, ogni demo dimostra un'idea, e l'intero portale dimostra come un metodo agile (SCRUM) possa trasformare concetti astratti in <strong>prodotti tangibili e navigabili</strong>.
+    </p>
+    <p>
+      Sotto la mia guida come <strong>Scrum Master</strong>, il team ha portato a casa il <strong>premio per la migliore applicazione del metodo SCRUM</strong>: una conferma che, quando il framework viene vissuto davvero e non solo recitato, i risultati arrivano.
+    </p>
+  </section>
+
+  <div class="doc-footer">
+    &copy; 2026 Progetto SCRUM &middot; TAFAB &mdash; Realizzato con <i class="fas fa-heart" style="color:#C0392B;"></i> per applicare l'AI ai processi aziendali
+  </div>
+
+</div>
+
+</body>
+</html>

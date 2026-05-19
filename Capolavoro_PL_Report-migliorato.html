@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capolavoro SCRUM 2026 - Produzione e Logistica | TAFAB</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+  --primary: #C0392B;
+  --primary-dark: #922B21;
+  --primary-light: #E74C3C;
+  --gold: #F4D03F;
+  --gold-dark: #D4AC0D;
+  --dark: #1a1a2e;
+  --dark2: #2C3E50;
+  --text: #2d3436;
+  --text-light: #636e72;
+  --bg: #ffffff;
+  --bg-alt: #f8f9fa;
+  --pl: #27AE60;
+  --pl-light: #d4f5e0;
+  --blue: #2980B9;
+  --purple: #8E44AD;
+  --orange: #E67E22;
+  --border: #e0e0e0;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.7;
+}
+
+/* ===== COVER ===== */
+.cover {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, var(--primary-light) 100%);
+  page-break-after: always;
+  overflow: hidden;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.05) 0%, transparent 50%),
+              radial-gradient(circle at 70% 60%, rgba(255,255,255,0.03) 0%, transparent 50%);
+}
+.cover > * { position: relative; z-index: 1; }
+.cover .brand {
+  font-size: 2.6rem; font-weight: 700; color: var(--gold);
+  letter-spacing: 2px; margin-bottom: 4px;
+}
+.cover .brand-sub {
+  font-size: 0.8rem; color: rgba(255,255,255,0.7);
+  letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px;
+}
+.cover .cover-label {
+  font-size: 0.7rem; color: rgba(255,255,255,0.5);
+  letter-spacing: 3px; text-transform: uppercase; margin-bottom: 30px;
+  border: 1px solid rgba(255,255,255,0.2); padding: 6px 18px; border-radius: 50px;
+}
+.cover h1 {
+  font-size: 2.8rem; color: #fff; margin-bottom: 6px; font-weight: 700;
+}
+.cover .sub-cover {
+  font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 24px; font-style: italic;
+}
+.cover .role-badge {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: rgba(255,255,255,0.12); backdrop-filter: blur(8px);
+  border: 1px solid var(--gold); padding: 10px 26px; border-radius: 50px;
+  color: var(--gold); font-size: 1rem; font-weight: 600; letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+.cover .role-badge i { font-size: 1.1rem; }
+.cover .quote {
+  max-width: 620px; background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px); border-left: 3px solid var(--gold);
+  padding: 20px 24px; color: rgba(255,255,255,0.9);
+  font-size: 0.95rem; line-height: 1.8; text-align: left;
+  border-radius: 0 8px 8px 0; font-style: italic;
+}
+.cover .year {
+  margin-top: 35px; color: rgba(255,255,255,0.4);
+  font-size: 0.72rem; letter-spacing: 3px; text-transform: uppercase;
+}
+
+/* ===== DOCUMENT ===== */
+.document { max-width: 900px; margin: 0 auto; padding: 10mm 35px; }
+
+/* ===== HEADER ===== */
+.page-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 0 18px; border-bottom: 3px solid var(--primary); margin-bottom: 25px;
+}
+.page-header .hl { display: flex; align-items: center; gap: 10px; }
+.page-header .hl .hb { font-weight: 700; color: var(--dark2); font-size: 0.85rem; }
+.page-header .hl .hb i { color: var(--primary); margin-right: 4px; }
+.page-header .hl .hs { font-size: 0.6rem; color: var(--text-light); letter-spacing: 2px; text-transform: uppercase; }
+.page-header .hr { text-align: right; }
+.page-header .hr .ht { font-size: 0.7rem; color: var(--primary); font-weight: 700; }
+.page-header .hr .hs2 { font-size: 0.55rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; }
+
+/* ===== SECTIONS ===== */
+section { padding: 8px 0; }
+.section-title {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 4px;
+  padding-left: 10px; border-left: 3px solid var(--primary);
+}
+.section-title h2 { font-size: 1.5rem; color: var(--dark2); font-weight: 700; }
+.section-sub { font-size: 0.85rem; color: var(--text-light); margin: 0 0 16px 13px; font-style: italic; }
+section p { font-size: 0.95rem; color: var(--text); margin-bottom: 10px; }
+section p strong { color: var(--primary); }
+section code {
+  background: #fef0ef; color: var(--primary-dark);
+  padding: 1px 6px; border-radius: 3px; font-size: 0.85em; border: 1px solid #f5c6c2;
+}
+section ul { list-style: none; padding: 0; }
+section ul li { padding: 2px 0 2px 18px; position: relative; color: var(--text); font-size: 0.9rem; margin-bottom: 1px; }
+section ul li::before {
+  content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900;
+  position: absolute; left: 0; color: var(--primary); font-size: 0.65rem; top: 6px;
+}
+
+/* ===== TOC ===== */
+.toc { padding: 5px 0 15px; }
+.toc .section-title { border-left-color: var(--gold); }
+.toc ol { list-style: none; padding: 0; counter-reset: toc; }
+.toc ol li {
+  counter-increment: toc; padding: 10px 0; border-bottom: 1px dotted var(--border);
+  font-size: 1rem; color: var(--dark2); transition: color 0.2s;
+}
+.toc ol li:hover { color: var(--primary); }
+.toc ol li::before {
+  content: counter(toc, decimal-leading-zero);
+  font-weight: 700; color: var(--primary); margin-right: 12px; font-size: 0.85rem;
+  background: #fef0ef; padding: 2px 8px; border-radius: 4px;
+}
+
+/* ===== H3 HEADINGS ===== */
+section h3 {
+  font-size: 1.05rem; font-weight: 700; color: var(--dark2);
+  margin-top: 20px; margin-bottom: 8px;
+  padding-bottom: 4px; border-bottom: 2px solid #f0f0f0;
+}
+section h3 strong { color: var(--primary); }
+
+/* ===== SUMMARY BOX ===== */
+.summary-box {
+  background: linear-gradient(135deg, #f0faf4 0%, #f8fff9 100%);
+  border-left: 4px solid var(--pl);
+  padding: 16px 20px; margin: 14px 0; border-radius: 0 8px 8px 0;
+  page-break-inside: avoid; box-shadow: 0 1px 4px rgba(39,174,96,0.08);
+}
+.summary-box .label {
+  font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--pl); font-weight: 700; margin-bottom: 4px;
+}
+.summary-box .label i { margin-right: 4px; }
+.summary-box p { margin-bottom: 0; font-size: 0.9rem; }
+
+/* ===== HIGHLIGHT BAR ===== */
+.hl-bar {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  border-radius: 8px; padding: 14px 20px; margin: 14px 0;
+  color: #fff; display: flex; align-items: center; gap: 12px;
+  box-shadow: 0 2px 8px rgba(192,57,43,0.15);
+}
+.hl-bar i { font-size: 1.3rem; color: var(--gold); }
+.hl-bar strong { font-size: 1rem; color: var(--gold); }
+.hl-bar span { font-size: 0.85rem; opacity: 0.9; }
+
+/* ===== PL BAR ===== */
+.pl-bar {
+  background: linear-gradient(135deg, var(--pl) 0%, #1e8449 100%);
+  border-radius: 8px; padding: 12px 18px; margin: 12px 0;
+  color: #fff; display: flex; align-items: center; gap: 10px;
+  box-shadow: 0 2px 8px rgba(39,174,96,0.15);
+}
+.pl-bar i { font-size: 1.2rem; }
+.pl-bar strong { font-size: 0.95rem; }
+.pl-bar span { font-size: 0.8rem; opacity: 0.9; }
+
+/* ===== PULL QUOTE ===== */
+.pull-quote {
+  border-top: 2px solid var(--gold);
+  border-bottom: 2px solid var(--gold);
+  padding: 14px 20px; margin: 16px 0;
+  font-size: 1.1rem; font-weight: 300; font-style: italic;
+  color: var(--dark2); text-align: center; line-height: 1.5;
+  page-break-inside: avoid;
+  background: #fffdf0;
+  border-radius: 4px;
+}
+
+/* ===== KPI GRID ===== */
+.kpi-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 14px 0;
+}
+.kpi {
+  background: linear-gradient(135deg, #fff 0%, #fef0ef 100%);
+  border: 1px solid #f0d0ce;
+  border-radius: 8px; padding: 16px 12px; text-align: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.kpi .value { font-size: 1.6rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 4px; }
+.kpi .label { font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; color: var(--text-light); font-weight: 500; line-height: 1.3; }
+
+/* ===== TABLE ===== */
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.85rem; page-break-inside: avoid;
+  border-radius: 8px; overflow: hidden;
+}
+thead th {
+  text-align: left; font-weight: 700; font-size: 0.65rem; letter-spacing: 1px;
+  text-transform: uppercase; color: #fff;
+  background: var(--dark2); padding: 10px 12px 9px;
+}
+tbody td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--text); }
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:nth-child(even) { background: #fafafa; }
+
+/* ===== TWO COL ===== */
+.two-col {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 12px 0; page-break-inside: avoid;
+}
+.two-col .col {
+  padding: 16px; background: #fff;
+  border-radius: 8px; border: 1px solid var(--border);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.two-col .col:first-child { border-left: 3px solid var(--orange); }
+.two-col .col:last-child { border-left: 3px solid var(--pl); }
+.two-col .col h4 {
+  font-size: 0.7rem; font-weight: 700; color: var(--dark2);
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
+  padding-bottom: 4px; border-bottom: 1px solid var(--border);
+}
+.two-col .col h4 i { margin-right: 4px; }
+.two-col .col ul li { font-size: 0.82rem; padding: 1px 0 1px 16px; }
+.two-col .col ul li::before { font-size: 0.55rem; top: 5px; }
+.two-col .col:first-child ul li::before { color: var(--orange); }
+.two-col .col:last-child ul li::before { color: var(--pl); }
+
+/* ===== TECH TABLE ===== */
+.tech-table td:first-child { font-weight: 700; color: var(--primary); }
+
+/* ===== SIGNATURE ===== */
+.signature-block {
+  margin-top: 20px; padding-top: 15px;
+  border-top: 3px solid var(--primary); page-break-inside: avoid;
+  background: linear-gradient(135deg, #fef0ef 0%, #fff 100%);
+  padding: 18px 20px; border-radius: 8px;
+}
+.signature-block .role {
+  font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--primary); font-weight: 700; margin-bottom: 2px;
+}
+.signature-block .role i { margin-right: 4px; }
+.signature-block .name { font-size: 1rem; font-weight: 700; color: var(--dark2); }
+
+/* ===== FOOTER ===== */
+.doc-footer {
+  text-align: center; padding: 25px 0 35px;
+  font-size: 0.75rem; color: var(--text-light);
+  border-top: 2px solid #f0d0ce; margin-top: 20px;
+}
+.doc-footer i.fa-heart { color: var(--primary); }
+
+/* ===== PRINT ===== */
+@page { size: A4; margin: 8mm; }
+@media print {
+  body { background: #fff !important; padding: 0; }
+  .kpi, .two-col .col, table, .pull-quote { break-inside: avoid; }
+  .cover { min-height: calc(100vh - 16mm); padding: 35mm 25mm; }
+  .document { padding: 0 35px; }
+  section { padding: 3px 0; }
+  section p { margin-bottom: 6px; }
+  section h3 { margin-top: 10px; margin-bottom: 4px; }
+  section ul li { padding: 1px 0 1px 18px; }
+  .signature-block { margin-top: 10px; padding: 10px 16px; }
+  .doc-footer { padding: 12px 0 18px; margin-top: 10px; }
+  .hl-bar { padding: 8px 14px; margin: 8px 0; }
+  .pl-bar { padding: 8px 14px; margin: 8px 0; }
+  .summary-box { padding: 10px 16px; margin: 8px 0; }
+  .pull-quote { padding: 8px 16px; margin: 8px 0; }
+  .kpi-grid { margin: 8px 0; gap: 8px; }
+  .kpi { padding: 8px 8px; }
+  .kpi .value { font-size: 1.2rem; }
+  .toc ol li { padding: 5px 0; }
+  .page-header { padding: 10px 0 10px; margin-bottom: 12px; }
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width: 700px) {
+  .document { padding: 0 20px; }
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .two-col { grid-template-columns: 1fr; }
+  .cover h1 { font-size: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<section class="cover">
+  <div class="brand">TAFAB</div>
+  <div class="brand-sub">Gruppo di Innovazione</div>
+  <div class="cover-label">Capolavoro a.s. 2025/2026</div>
+  <h1>Progetto SCRUM 2026</h1>
+  <div class="sub-cover">Focus: Produzione e Logistica &mdash; Modello Make-to-Order AI-driven</div>
+  <div class="role-badge"><i class="fas fa-award"></i> SCRUM MASTER</div>
+  <div class="quote">
+    &ldquo;Ho scelto il progetto SCRUM 2026 come capolavoro perch&eacute; mi ha fatto crescere davvero.
+    Come Scrum Master ho coordinato 5 team, facilitato le daily e tolto gli ostacoli.
+    Abbiamo vinto il premio per la migliore applicazione del metodo SCRUM.&rdquo;
+  </div>
+  <div class="year">Anno Scolastico 2025 / 2026 &mdash; Premio Miglior Metodo SCRUM 2026</div>
+</section>
+
+<div class="document">
+
+  <!-- ===== HEADER ===== -->
+  <div class="page-header">
+    <div class="hl">
+      <div>
+        <div class="hb"><i class="fas fa-leaf"></i> TAFAB &mdash; Gruppo di Innovazione</div>
+        <div class="hs">Vincitori Premio Miglior Metodo SCRUM 2026</div>
+      </div>
+    </div>
+    <div class="hr">
+      <div class="ht">Report Tecnico &mdash; PL</div>
+      <div class="hs2">Produzione e Logistica</div>
+    </div>
+  </div>
+
+  <!-- ===== TOC ===== -->
+  <div class="toc">
+    <div class="section-title"><h2>Indice</h2></div>
+    <ol>
+      <li>Introduzione e contesto di progetto</li>
+      <li>Focus: l'area Produzione e Logistica</li>
+      <li>Modello operativo: Make-to-Order evoluto</li>
+      <li>Attivit&agrave; svolte e processi implementati</li>
+      <li>Conclusioni: ci&ograve; che mi sono portato a casa dalla Scrum</li>
+    </ol>
+  </div>
+
+  <!-- ===== 1. INTRODUZIONE ===== -->
+  <section>
+    <div class="section-title"><h2>1. Introduzione e contesto di progetto</h2></div>
+
+    <div class="hl-bar">
+      <i class="fas fa-user-tie"></i>
+      <div>
+        <strong>Il mio ruolo: Scrum Master</strong><br>
+        <span>Coordinamento 5 team (CM, HR, RS, PL, PV) | Facilitazione daily | Rimozione impedimenti</span>
+      </div>
+    </div>
+
+    <p>
+      Ho scelto il progetto <strong>SCRUM 2026</strong> come capolavoro perch&eacute;
+      rappresenta l'esperienza che, pi&ugrave; di ogni altra, mi ha fatto crescere
+      sul piano metodologico, tecnico e umano. Il progetto ha simulato la
+      trasformazione digitale di un panificio artigianale industrializzato,
+      affrontando l'intera catena del valore: dalla previsione della domanda
+      fino alla consegna del prodotto finito alla Grande Distribuzione Organizzata.
+    </p>
+
+    <p>
+      L'organizzazione di lavoro &egrave; stata strutturata su cinque aree
+      funzionali, ciascuna gestita come team Scrum autonomo:
+      <strong>Comunicazione &amp; Marketing</strong>,
+      <strong>Risorse Umane</strong>,
+      <strong>Pianificazione &amp; Vendite</strong>,
+      <strong>Reparto Strategico</strong> e l'area che ho avuto il privilegio
+      di documentare in profondit&agrave; in questo report:
+      <strong>Produzione e Logistica</strong>.
+    </p>
+
+    <p>
+      Nel ruolo di <strong>Scrum Master</strong> ho coordinato i cinque team,
+      facilitato le daily, rimosso gli impedimenti operativi e accompagnato le
+      retrospettive di sprint. &Egrave; stato il mio primo vero assaggio di cosa
+      significhi <em>stare a capo di un gruppo</em>: ascoltare prima di parlare,
+      servire prima di guidare, e creare le condizioni perch&eacute; gli altri
+      possano dare il meglio. Il riconoscimento finale &mdash; il <strong>premio
+      per la migliore applicazione del metodo SCRUM</strong> &mdash; &egrave;
+      stato la conferma collettiva che il framework, se vissuto e non solo
+      recitato, funziona.
+    </p>
+
+    <div class="summary-box">
+      <div class="label"><i class="fas fa-info-circle"></i> In breve</div>
+      <p>
+        Il documento approfondisce il lavoro svolto dal team <strong>Produzione e Logistica</strong>,
+        mostrando come un modello tradizionale di produzione a stock sia stato ripensato in chiave
+        <strong>Make-to-Order dinamico</strong>, supportato da intelligenza artificiale, IoT,
+        automazione adattiva e una supply chain completamente connessa.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== 2. FOCUS PL ===== -->
+  <section>
+    <div class="section-title"><h2>2. Focus: l'area Produzione e Logistica</h2></div>
+
+    <div class="pl-bar">
+      <i class="fas fa-cogs"></i>
+      <div>
+        <strong>PL &mdash; La mia area di competenza</strong><br>
+        <span>Previsione domanda | Gestione magazzino | Ottimizzazione supply chain</span>
+      </div>
+    </div>
+
+    <h3>2.1 Che cos'&egrave; quest'area nel progetto</h3>
+    <p>
+      Nel contesto del progetto SCRUM 2026, l'area <strong>Produzione e
+      Logistica</strong> rappresenta il cuore operativo dell'azienda:
+      &egrave; il dominio in cui le previsioni di mercato, le decisioni
+      strategiche e gli ordini commerciali si trasformano in <strong>prodotto
+      fisico</strong> pronto per lo scaffale. La sua missione &egrave;
+      garantire che il pane giusto, nella quantit&agrave; giusta, arrivi al
+      punto giusto, nel momento giusto, con il livello di qualit&agrave;
+      e freschezza atteso dal cliente finale.
+    </p>
+
+    <p>
+      L'area &egrave; stata progettata come un <strong>sistema "living"</strong>:
+      non una semplice catena lineare, ma una rete di processi interconnessi
+      capaci di anticipare la domanda, ridurre gli sprechi, garantire
+      tracciabilit&agrave; end-to-end e reagire in tempo reale a
+      eventi imprevisti come ritardi dei fornitori, picchi di richiesta o
+      anomalie di linea.
+    </p>
+
+    <h3>2.2 Come funziona operativamente il flusso</h3>
+    <p>Il flusso operativo si snoda lungo quattro momenti chiave, gestiti come un unico sistema integrato:</p>
+    <ul>
+      <li><strong>Acquisizione della domanda.</strong> Gli ordini dalla GDO, canali B2B e previsioni AI confluiscono in un unico portafoglio digitale.</li>
+      <li><strong>Pianificazione a capacit&agrave; finita.</strong> L'AI dimensiona dinamicamente i lotti bilanciando costi, shelf-life e capacit&agrave; delle linee.</li>
+      <li><strong>Esecuzione produttiva.</strong> Le ricette parametriche vengono scaricate sui PLC; sensori IoT monitorano i parametri di processo.</li>
+      <li><strong>Distribuzione multimodale.</strong> Allocazione a finestre di consegna efficienti tra camion, droni o vettori intermodali.</li>
+    </ul>
+
+    <div class="kpi-grid">
+      <div class="kpi"><span class="value">70&ndash;80%</span><span class="label">Portafoglio in pull (MTO)</span></div>
+      <div class="kpi"><span class="value">645k+</span><span class="label">Record analizzati</span></div>
+      <div class="kpi"><span class="value">5</span><span class="label">Team Scrum coordinati</span></div>
+      <div class="kpi"><span class="value">1&deg;</span><span class="label">Premio SCRUM 2026</span></div>
+    </div>
+  </section>
+
+  <!-- ===== 3. MODELLO MTO ===== -->
+  <section>
+    <div class="section-title"><h2>3. Modello operativo: Make-to-Order evoluto</h2></div>
+
+    <h3>3.1 Produzione a lotti dinamici guidata dall'AI</h3>
+    <p>
+      Il modello Make-to-Order evoluto si fonda su una produzione su ordine, in cui i lotti vengono
+      dimensionati in tempo reale dall'intelligenza artificiale. L'ottimizzazione &egrave; multi-obiettivo
+      e integra previsione di domanda, pianificazione a capacit&agrave; finita, shelf-life del prodotto
+      e disponibilit&agrave; di materie prime tramite un <strong>MRP guidato dall'AI</strong>.
+    </p>
+
+    <p>
+      La <strong>scheda di produzione digitale</strong> agisce come gemello digitale dell'ordine:
+      contiene ricetta parametrica, quantit&agrave;, fasi operative, tempi, macchine coinvolte,
+      parametri di processo, tracciabilit&agrave; e checklist di qualit&agrave;.
+    </p>
+
+    <h3>3.2 Magazzino virtuale e simulazioni what-if</h3>
+    <p>
+      Il magazzino virtuale unifica stock fisico, WIP, stock in transito, capacit&agrave; produttiva
+      committabile (CTP) e domanda. L'AI esegue <strong>simulazioni what-if continue</strong>
+      valutando scenari di rifornimento, ritardi, sostituzioni e impatto economico.
+    </p>
+
+    <p>
+      Il pianificatore mantiene il controllo grazie a un approccio <strong>human-in-the-loop</strong>:
+      l'AI propone, l'operatore conferma o modifica.
+    </p>
+
+    <h3>3.3 Lead time e leve di riduzione</h3>
+    <table>
+      <thead>
+        <tr><th style="width:25%">Leva</th><th style="width:45%">Tecniche applicate</th><th>Obiettivo</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Setup</td><td>SMED, ricette PLC, pulizie automatizzate</td><td>One-touch changeover</td></tr>
+        <tr><td>Attese</td><td>AGV e AMR sincronizzati col piano produttivo</td><td>Rifornimenti JIT</td></tr>
+        <tr><td>Velocit&agrave; informativa</td><td>Integrazione end-to-end ordine &rarr; piano</td><td>Trasformazione automatica</td></tr>
+      </tbody>
+    </table>
+
+    <h3>3.4 Automazione adattiva, IoT e robotica</h3>
+    <p>
+      L'impianto produttivo si basa su macchinari adattivi: forni a zone indipendenti, nastri
+      a velocit&agrave; variabile e moduli di confezionamento intercambiabili. La <strong>robotica
+      collaborativa</strong> (cobot) supporta decorazione, impilamento e carico, mentre sensori
+      IoT garantiscono controllo qualit&agrave; e manutenzione predittiva.
+    </p>
+
+    <h3>3.5 Logistica ibrida e contratti con la GDO</h3>
+    <ul>
+      <li><strong>Camion:</strong> distribuzione locale just-in-time verso i punti vendita.</li>
+      <li><strong>Droni:</strong> consegne urgenti e leggere verso aree remote.</li>
+      <li><strong>Navi e ferrovia:</strong> materie prime non deperibili in grandi volumi, flotte a biometano/GNL.</li>
+    </ul>
+    <p>
+      I contratti GDO integrano SKU, MOQ, frequenza, shelf-life, KPI, tracciabilit&agrave; e reso.
+      Previsti modelli <strong>Vendor Managed Inventory</strong> e <strong>Consignment Stock</strong>.
+    </p>
+
+    <h3>3.6 Architettura IT, sicurezza e gestione del rischio</h3>
+    <p>
+      Architettura <strong>ibrida</strong>: on-premise per macchine e PLC; cloud per AI, simulazioni
+      e tracciabilit&agrave; blockchain-like. Sicurezza con microsegmentazione OT/IT e backup air-gapped.
+    </p>
+
+    <div class="two-col">
+      <div class="col">
+        <h4>Rischi principali</h4>
+        <ul>
+          <li>Cybersecurity OT/IT</li>
+          <li>Dipendenza tecnologica</li>
+          <li>Qualit&agrave; dati AI</li>
+          <li>Perdita know-how artigianale</li>
+          <li>Fragilit&agrave; supply chain</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>Mitigazioni adottate</h4>
+        <ul>
+          <li>Microsegmentazione e monitoraggio</li>
+          <li>Standard aperti e API</li>
+          <li>Human-in-the-loop</li>
+          <li>Ricette parametriche digitalizzate</li>
+          <li>Multi-sourcing e buffer critici</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. ATTIVITA' ===== -->
+  <section>
+    <div class="section-title"><h2>4. Attivit&agrave; svolte e processi implementati</h2></div>
+
+    <p>
+      Nel ruolo di Scrum Master, ho lavorato a stretto contatto con il team di Produzione e Logistica
+      per trasformare il modello concettuale in artefatti utilizzabili.
+    </p>
+
+    <h3>4.1 Pianificazione e facilitazione Scrum</h3>
+    <ul>
+      <li>Definizione del <strong>backlog</strong> PL con epic e user story prioritizzate.</li>
+      <li>Conduzione di <strong>sprint settimanali</strong> con daily, review e retrospettive.</li>
+      <li>Sincronizzazione costante con gli altri team via <strong>Scrum-of-Scrums</strong>.</li>
+      <li>Rimozione attiva degli impedimenti con stakeholder e fornitori.</li>
+    </ul>
+
+    <h3>4.2 Progettazione del modello operativo</h3>
+    <ul>
+      <li>Definizione dei processi di <strong>pianificazione a capacit&agrave; finita</strong>.</li>
+      <li>Mappatura flusso ordine-produzione-consegna con KPI: lead time, OTIF, scarto.</li>
+      <li>Disegno della scheda di produzione digitale e magazzino virtuale.</li>
+      <li>Definizione modello contrattuale GDO con flussi VMI e Consignment Stock.</li>
+    </ul>
+
+    <h3>4.3 Panificio Analytics Dashboard</h3>
+    <p>
+      L'area ha prodotto la <strong>Panificio Analytics Dashboard</strong> in Python/Streamlit,
+      strumento operativo per il responsabile di produzione con cinque moduli:
+    </p>
+
+    <table>
+      <thead><tr><th style="width:40%">Tecnologia</th><th style="width:40%">Scopo</th><th>Versione</th></tr></thead>
+      <tbody>
+        <tr class="tech-table"><td>Python</td><td>Linguaggio principale</td><td>3.8+</td></tr>
+        <tr class="tech-table"><td>Streamlit</td><td>Dashboard interattiva</td><td>1.28+</td></tr>
+        <tr class="tech-table"><td>Pandas</td><td>Manipolazione dati</td><td>2.0+</td></tr>
+        <tr class="tech-table"><td>Plotly</td><td>Visualizzazioni</td><td>5.17+</td></tr>
+        <tr class="tech-table"><td>NumPy</td><td>Calcoli numerici</td><td>1.24+</td></tr>
+      </tbody>
+    </table>
+
+    <ul>
+      <li><strong>Analisi costi:</strong> calcolo costo esatto per pane, confronto ingredienti, ottimizzazione mix.</li>
+      <li><strong>Gestione magazzino:</strong> scorte in tempo reale, avvisi sottoscorta, log rifornimenti.</li>
+      <li><strong>Pianificazione produzione:</strong> piani basati su ordini reali, simulazioni pre-produzione.</li>
+      <li><strong>Previsioni mercato:</strong> analisi 645k+ record, forecast domanda, top prodotti.</li>
+      <li><strong>Report avanzati:</strong> multi-formato, suggerimenti automatici, esportazione dati.</li>
+    </ul>
+
+    <h3>4.4 Sperimentazione e validazione</h3>
+    <ul>
+      <li>Test what-if su dataset storici per validare modelli previsionali.</li>
+      <li>Esportazioni CSV/XLSX per integrazione con ERP simulati.</li>
+      <li>Revisione ricette parametriche con referenti di processo.</li>
+    </ul>
+
+    <div class="pull-quote">
+      Non abbiamo automatizzato il pane: abbiamo dato al pane una memoria,
+      una previsione e una rete di sensi.
+    </div>
+  </section>
+
+  <!-- ===== 5. CONCLUSIONI ===== -->
+  <section>
+    <div class="section-title"><h2>5. Conclusioni: ci&ograve; che mi sono portato a casa dalla Scrum</h2></div>
+
+    <p>
+      La parte tecnica di questo progetto &mdash; il modello MTO evoluto, l'AI,
+      l'IoT, la dashboard &mdash; &egrave; ci&ograve; che si vede. Ci&ograve;
+      che resta <em>davvero</em>, per&ograve;, &egrave; un'altra cosa: il modo
+      in cui ho imparato a lavorare insieme agli altri.
+    </p>
+
+    <div class="hl-bar">
+      <i class="fas fa-award"></i>
+      <div>
+        <strong>Premio Miglior Metodo SCRUM 2026</strong><br>
+        <span>Conferma che il framework, quando vissuto e non recitato, funziona</span>
+      </div>
+    </div>
+
+    <h3>5.1 Il valore del framework Scrum</h3>
+    <p>
+      Studiare Scrum sui libri &egrave; un conto, viverlo come Scrum Master di
+      cinque team contemporaneamente &egrave; un altro. Il framework non &egrave;
+      un insieme di rituali, ma un <strong>sistema di feedback brevi</strong> che
+      costringe le persone a essere oneste: ogni due settimane si guarda in faccia
+      ci&ograve; che funziona e ci&ograve; che non funziona, e si cambia.
+    </p>
+
+    <h3>5.2 Key takeaways professionali</h3>
+    <ul>
+      <li><strong>Servire prima di guidare.</strong> Il ruolo dello Scrum Master non &egrave; comandare, ma rimuovere ci&ograve; che impedisce agli altri di fare bene il loro lavoro.</li>
+      <li><strong>Ascoltare prima di parlare.</strong> Le soluzioni migliori sono arrivate dai team, non da me. Il mio compito era creare lo spazio perch&eacute; potessero emergere.</li>
+      <li><strong>Sincronizzare senza centralizzare.</strong> Coordinare cinque team senza diventare un collo di bottiglia &egrave; stata la sfida pi&ugrave; difficile.</li>
+      <li><strong>La trasparenza non &egrave; debolezza.</strong> Mostrare gli impedimenti, anche quelli scomodi, permette al sistema di correggersi.</li>
+      <li><strong>Iterare &egrave; meglio che pianificare tutto.</strong> Nessuno sprint &egrave; andato come previsto, eppure il prodotto finale &egrave; arrivato migliore del previsto.</li>
+    </ul>
+
+    <h3>5.3 Apprendimento pratico</h3>
+    <p>
+      Sul piano tecnico, ho consolidato competenze su pianificazione della produzione,
+      gestione supply chain, modellazione dati previsionali e sviluppo interfacce
+      analytics con Streamlit. Ho imparato a leggere un dataset come una storia,
+      distinguere un'intuizione da una correlazione e parlare con chi sta in produzione
+      senza nascondermi dietro il gergo tecnico.
+    </p>
+
+    <h3>5.4 Apprendimento personale</h3>
+    <p>
+      Sul piano umano, ho scoperto che <strong>far brillare gli altri</strong>
+      &egrave; una forma di leadership pi&ugrave; potente del prendersi meriti.
+      Il premio &egrave; stato vinto da un gruppo, non da una persona: e questa
+      &egrave; la lezione che mi porter&ograve; in qualunque progetto futuro.
+    </p>
+
+    <div class="summary-box">
+      <div class="label"><i class="fas fa-check-circle"></i> Sintesi finale</div>
+      <p>
+        Il progetto SCRUM 2026 mi ha lasciato due cose: un metodo per affrontare la
+        complessit&agrave; un passo alla volta, e la consapevolezza che la qualit&agrave;
+        di un risultato &egrave; sempre la qualit&agrave; delle relazioni che lo hanno
+        reso possibile.
+      </p>
+    </div>
+
+    <div class="signature-block">
+      <div class="role"><i class="fas fa-user-tie"></i> Scrum Master &middot; Progetto SCRUM 2026</div>
+      <div class="name">Capolavoro a.s. 2025/2026</div>
+    </div>
+  </section>
+
+  <div class="doc-footer">
+    &copy; 2026 Progetto SCRUM &middot; TAFAB &mdash; Realizzato con <i class="fas fa-heart" style="color:#C0392B;"></i> per applicare l'AI ai processi aziendali
+  </div>
+
+</div>
+
+</body>
+</html>
